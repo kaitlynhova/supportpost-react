@@ -11,6 +11,9 @@ class Card extends Component {
     return (
       <div>
         <p>{this.card.reason}</p>
+        <p>
+          -{this.card.name} @ {this.card.location}
+        </p>
       </div>
     );
   }
