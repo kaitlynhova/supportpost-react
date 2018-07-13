@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Card from "./Card/Card";
 import CardForm from "./CardForm/CardForm";
+import "./FirebaseConfig/FirebaseConfig";
+import firebase from "firebase";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -8,22 +10,27 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
+
+    //initialize the database
+    this.db = firebase
+      .database()
+      .ref()
+      .child("cards");
+
     this.state = {
-      cards: [
-        {
-          id: "aaaah",
-          createdAt: Date.now(),
-          reason: "Because it's the right thing to do",
-          name: "Cat Hova",
-          email: "Hova@hovalabs.com",
-          location: "Omaha, NE"
-        }
-      ]
+      cards: []
     };
     this.addCard = this.addCard.bind(this);
+    this.handleNewCard = this.handleNewCard.bind(this);
+    this.db.on("child_added", this.handleNewCard);
+  }
+  handleNewCard(snap) {
+    debugger;
+    this.setState({ cards: [...this.state.cards, snap.val()] });
   }
   addCard(card) {
     this.setState({ cards: [...this.state.cards, card] });
+    this.db.push(card);
   }
   render() {
     var cardList = this.state.cards.map((card, i) => {
