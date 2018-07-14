@@ -1,49 +1,24 @@
 import React, { Component } from "react";
-import Card from "./Card/Card";
-import CardForm from "./CardForm/CardForm";
-import "./FirebaseConfig/FirebaseConfig";
-import firebase from "firebase";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Campaigns from "./Campaigns/Campaigns";
+import Cards from "./Cards/Cards";
 
-import logo from "./logo.svg";
 import "./App.css";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-    //initialize the database
-    this.db = firebase
-      .database()
-      .ref()
-      .child("cards");
-
-    this.state = {
-      cards: []
-    };
-    this.addCard = this.addCard.bind(this);
-    this.handleNewCard = this.handleNewCard.bind(this);
-    this.db.on("child_added", this.handleNewCard);
-  }
-  handleNewCard(snap) {
-    debugger;
-    this.setState({ cards: [...this.state.cards, snap.val()] });
-  }
-  addCard(card) {
-    this.setState({ cards: [...this.state.cards, card] });
-    this.db.push(card);
-  }
-  render() {
-    var cardList = this.state.cards.map((card, i) => {
-      return <Card card={card} key={i} />;
-    });
-    return (
-      <div>
-        <h1>SupportCards</h1>
-        <CardForm addCard={this.addCard} />
-        {cardList}
-      </div>
-    );
-  }
-}
-
-export default App;
+const Navigation = () => (
+  <Router>
+    <div>
+      <ul>
+        <li>
+          <a href="/">Campaigns</a>
+        </li>
+        <li>
+          <a href="/cards">Cards</a>
+        </li>
+      </ul>
+      <Route exact path="/" component={Campaigns} />
+      <Route path="/cards" component={Cards} />
+    </div>
+  </Router>
+);
+export default Navigation;
