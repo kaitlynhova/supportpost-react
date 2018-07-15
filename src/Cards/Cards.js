@@ -22,7 +22,6 @@ class Cards extends Component {
     this.db.on("child_added", this.handleNewCard);
   }
   handleNewCard(snap) {
-    debugger;
     this.setState({ cards: [...this.state.cards, snap.val()] });
   }
   addCard(card) {

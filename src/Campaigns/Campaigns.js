@@ -22,7 +22,6 @@ class Campaigns extends Component {
     this.db.on("child_added", this.handleNewCampaign);
   }
   handleNewCampaign(snap) {
-    debugger;
     this.setState({ campaigns: [...this.state.campaigns, snap.val()] });
   }
   addCampaign(campaign) {
