@@ -14,6 +14,7 @@ class Card extends Component {
         <p>
           -{this.card.name} @ {this.card.location}
         </p>
+        <p>campaign: {this.card.campaignId}</p>
       </div>
     );
   }
@@ -24,7 +25,8 @@ Card.propTypes = PropTypes.shape({
   createdAt: PropTypes.instanceOf(Date),
   reason: PropTypes.string,
   email: PropTypes.string,
-  location: PropTypes.string
+  location: PropTypes.string,
+  campaignId: PropTypes.string
 });
 
 export default Card;

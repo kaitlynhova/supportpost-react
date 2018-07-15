@@ -7,7 +7,6 @@ import firebase from "firebase";
 class Cards extends Component {
   constructor(props) {
     super(props);
-
     //initialize the database
     this.db = firebase
       .database()
@@ -35,7 +34,10 @@ class Cards extends Component {
     return (
       <div>
         <h1>SupportCards</h1>
-        <CardForm addCard={this.addCard} />
+        <CardForm
+          addCard={this.addCard}
+          campaignId={this.props.match.params.campaign_id}
+        />
         {cardList}
       </div>
     );

@@ -22,6 +22,7 @@ class CardForm extends Component {
   }
   submitCard() {
     this.props.addCard({
+      campaignId: this.props.campaignId,
       id: this.state.id,
       createdAt: Date.now(),
       email: this.state.email,

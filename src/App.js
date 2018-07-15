@@ -21,7 +21,11 @@ const Navigation = () => (
         </li>
       </ul>
       <Route exact path="/" component={Home} />
-      <Route path="/cards" component={Cards} />
+      <Route
+        exact
+        path="/cards/:campaign_id"
+        render={props => <Cards {...props} />}
+      />
       <Route path="/campaigns" component={Campaigns} />
     </div>
   </Router>
