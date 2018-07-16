@@ -9,12 +9,16 @@ class Campaign extends Component {
   render(props) {
     return (
       <div>
-        <p>campaign</p>
-        <p>title: {this.props.campaign.title}</p>
-        <p>description: {this.props.campaign.description}</p>
-        <p>prompt: {this.props.campaign.prompt}</p>
-        <p>note: #{this.props.campaign.note}</p>
-        <p>color: #{this.props.campaign.color}</p>
+        <a href={"/cards/" + this.props.campaign.id}>
+          <p>campaign</p>
+          <p>id: {this.props.campaign.id}</p>
+          <p>title: {this.props.campaign.title}</p>
+          <p>description: {this.props.campaign.description}</p>
+          <p>prompt: {this.props.campaign.prompt}</p>
+          <p>note: #{this.props.campaign.note}</p>
+          <p>color: #{this.props.campaign.color}</p>
+        </a>
+        <hr />
       </div>
     );
   }

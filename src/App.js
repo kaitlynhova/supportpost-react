@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import CardDisplayPage from "./CardDisplayPage/CardDisplayPage";
 import Campaigns from "./Campaigns/Campaigns";
 import Cards from "./Cards/Cards";
 import Home from "./Home";
@@ -25,6 +26,11 @@ const Navigation = () => (
         exact
         path="/cards/:campaign_id"
         render={props => <Cards {...props} />}
+      />
+      <Route
+        exact
+        path="/card/:card_id"
+        render={props => <CardDisplayPage {...props} />}
       />
       <Route path="/campaigns" component={Campaigns} />
     </div>

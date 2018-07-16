@@ -10,11 +10,14 @@ class Card extends Component {
   render(props) {
     return (
       <div>
-        <p>{this.card.reason}</p>
-        <p>
-          -{this.card.name} @ {this.card.location}
-        </p>
-        <p>campaign: {this.card.campaignId}</p>
+        <a href={"/card/" + this.card.id}>
+          <p>{this.card.reason}</p>
+          <p>
+            -{this.card.name} @ {this.card.location}
+          </p>
+          <p>campaign: {this.card.campaignId}</p>
+          <p>card id: {this.card.id}</p>
+        </a>
       </div>
     );
   }

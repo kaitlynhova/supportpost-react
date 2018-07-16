@@ -21,7 +21,11 @@ class Cards extends Component {
     this.db.on("child_added", this.handleNewCard);
   }
   handleNewCard(snap) {
-    this.setState({ cards: [...this.state.cards, snap.val()] });
+    var newCard = snap.val();
+    if (newCard.campaignId == this.props.match.params.campaign_id) {
+      newCard.id = snap.key;
+      this.setState({ cards: [...this.state.cards, newCard] });
+    }
   }
   addCard(card) {
     this.setState({ cards: [...this.state.cards, card] });

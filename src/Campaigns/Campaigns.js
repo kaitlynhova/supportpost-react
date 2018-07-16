@@ -13,7 +13,6 @@ class Campaigns extends Component {
       .database()
       .ref()
       .child("campaigns");
-
     this.state = {
       campaigns: []
     };
@@ -22,7 +21,9 @@ class Campaigns extends Component {
     this.db.on("child_added", this.handleNewCampaign);
   }
   handleNewCampaign(snap) {
-    this.setState({ campaigns: [...this.state.campaigns, snap.val()] });
+    var newCampaign = snap.val();
+    newCampaign.id = snap.key;
+    this.setState({ campaigns: [...this.state.campaigns, newCampaign] });
   }
   addCampaign(campaign) {
     this.setState({ campaigns: [...this.state.campaigns, campaign] });
