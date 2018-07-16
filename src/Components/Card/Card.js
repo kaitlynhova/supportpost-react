@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { Card as CardStyle } from "../../DesignSystem";
+
 class Card extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +10,7 @@ class Card extends Component {
   }
   render(props) {
     return (
-      <div>
+      <CardStyle>
         <a href={"/card/" + this.card.id}>
           <p>{this.card.reason}</p>
           <p>
@@ -17,7 +19,7 @@ class Card extends Component {
           <p>campaign: {this.card.campaignId}</p>
           <p>card id: {this.card.id}</p>
         </a>
-      </div>
+      </CardStyle>
     );
   }
 }
