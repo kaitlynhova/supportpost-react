@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "../FirebaseConfig/FirebaseConfig";
 import firebase from "firebase";
+
+import "../../Utils/FirebaseConfig";
 
 class CardDisplayPage extends Component {
   constructor(props) {

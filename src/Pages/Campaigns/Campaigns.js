@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import Campaign from "../Campaign/Campaign";
-import CampaignForm from "../CampaignForm/CampaignForm";
-import "../FirebaseConfig/FirebaseConfig";
 import firebase from "firebase";
+
+import "../../Utils/FirebaseConfig";
+
+import Campaign from "../../Components/Campaign/Campaign";
+import CampaignForm from "../../Components/CampaignForm/CampaignForm";
 
 class Campaigns extends Component {
   constructor(props) {

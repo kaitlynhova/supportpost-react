@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Campaign from "./Campaign/Campaign";
-import "./FirebaseConfig/FirebaseConfig";
 import firebase from "firebase";
+
+import Campaign from "../../Components/Campaign/Campaign";
+import "../../Utils/FirebaseConfig";
 
 class Home extends Component {
   constructor(props) {

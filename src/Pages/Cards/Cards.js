@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Card from "../Card/Card";
-import CardForm from "../CardForm/CardForm";
-import "../FirebaseConfig/FirebaseConfig";
+import Card from "../../Components/Card/Card";
+import CardForm from "../../Components/CardForm/CardForm";
+import "../../Utils/FirebaseConfig";
 import firebase from "firebase";
 
 class Cards extends Component {
