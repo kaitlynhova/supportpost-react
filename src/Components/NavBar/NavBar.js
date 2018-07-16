@@ -5,12 +5,6 @@ const NavBar = () => (
     <li>
       <a href="/">Home</a>
     </li>
-    <li>
-      <a href="/cards">Cards</a>
-    </li>
-    <li>
-      <a href="/campaigns">Campaigns</a>
-    </li>
   </ul>
 );
 
