@@ -3,7 +3,7 @@ import firebase from "firebase";
 
 import "../../Utils/FirebaseConfig";
 
-import Campaign from "../../Components/Campaign/Campaign";
+import Campaign from "../../DesignSystem/Campaign";
 import CampaignForm from "../../Components/CampaignForm/CampaignForm";
 
 class Campaigns extends Component {
@@ -32,8 +32,8 @@ class Campaigns extends Component {
     this.db.push(campaign);
   }
   render() {
-    var campaignList = this.state.campaigns.map((campaign, i) => {
-      return <Campaign campaign={campaign} key={i} />;
+    const campaignList = this.state.campaigns.map((campaign, i) => {
+      return <Campaign {...campaign} key={i} />;
     });
     return (
       <div>

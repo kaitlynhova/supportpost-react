@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import firebase from "firebase";
+import { Container } from "../../DesignSystem/Container";
 
-import Campaign from "../../Components/Campaign/Campaign";
+import Campaign from "../../DesignSystem/Campaign";
 import "../../Utils/FirebaseConfig";
 
 class Home extends Component {
@@ -25,12 +26,12 @@ class Home extends Component {
   }
   render(props) {
     var campaignList = this.state.campaigns.map((campaign, i) => {
-      return <Campaign campaign={campaign} key={i} />;
+      return <Campaign {...campaign} key={i} />;
     });
     return (
       <div>
         Home page
-        {campaignList}
+        <Container>{campaignList}</Container>
       </div>
     );
   }

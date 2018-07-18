@@ -1,3 +1,6 @@
+export const container = {
+  max_width: 1220
+};
 export const spacing = {
   none: 0,
   standard: 30
@@ -12,15 +15,19 @@ export const weights = {
 
 export const theme = {
   breakpoints: [32, 48, 64, 80],
+  container: container,
   space: spacing,
   fonts: {
     primary: "europa"
   },
   fontSizes: {
-    p: 18
+    p: 25,
+    h1: 45,
+    card: 2.5
   },
   weights: weights,
   colors: {
+    black: "#000000",
     white: "#FFFFFF",
     whitesmoke: "#F5F5F5"
   }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 
+import { CardShow } from "../../DesignSystem";
+
 import "../../Utils/FirebaseConfig";
 
 class CardDisplayPage extends Component {
@@ -42,14 +44,14 @@ class CardDisplayPage extends Component {
   }
   render() {
     return (
-      <div>
+      <CardShow>
         <h1>SupportCard</h1>
         <p>{this.state.card.reason}</p>
         <p>
           -{this.state.card.name} @ {this.state.card.location}
         </p>
         <p>campaign: {this.state.campaign.prompt}</p>
-      </div>
+      </CardShow>
     );
   }
 }

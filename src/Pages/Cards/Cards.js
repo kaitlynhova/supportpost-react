@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "../../Components/Card/Card";
+import Card from "../../DesignSystem/Card";
 import CardForm from "../../Components/CardForm/CardForm";
 import "../../Utils/FirebaseConfig";
 import firebase from "firebase";
@@ -33,7 +33,7 @@ class Cards extends Component {
   }
   render() {
     var cardList = this.state.cards.map((card, i) => {
-      return <Card card={card} key={i} />;
+      return <Card {...card} key={i} />;
     });
     return (
       <div>
