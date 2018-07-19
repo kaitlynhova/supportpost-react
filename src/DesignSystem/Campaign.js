@@ -11,7 +11,7 @@ const Card = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: -15vw;
+  margin-top: -17vw;
   :before {
     content: "";
     display: block;
@@ -63,8 +63,8 @@ const Triangle = styled.div`
   width: 0;
   height: 0;
   border-left: 0px solid transparent;
-  border-right: 15vw solid transparent;
-  border-top: 15vw solid ${props => props.color};
+  border-right: 17vw solid transparent;
+  border-top: 17vw solid ${props => props.color};
   position: relative;
   z-index: 1;
 `;
