@@ -8,38 +8,33 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 const Card = styled.div`
   background-color: ${theme.colors.whitesmoke};
+  padding-bottom: 100%;
   position: relative;
-  width: 100%;
-  overflow: hidden;
   margin-top: -17vw;
-  :before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
 `;
 
 const CardContent = styled.div`
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  font-size: ${theme.fontSizes.card}vw;
+
   position: absolute;
   top: 0;
-  left: 0;
-  bottom: 0;
   right: 0;
-  div {
-    display: table;
-    width: 100%;
-    height: 100%;
-  }
-  span {
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-    padding: ${theme.space.standard}px;
-    font-size: ${theme.fontSizes.card}vw;
-    color: ${theme.colors.black};
-    position: relative;
-    z-index: 1;
-  }
+  bottom: 0;
+  left: 0;
+  /* Vertical Centering */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: ${theme.space.standard}px;
+  z-index: 1;
 `;
 
 const CampaignContainer = styled.div`
@@ -69,8 +64,6 @@ const Triangle = styled.div`
   z-index: 1;
 `;
 
-debugger;
-
 export const Campaign = props => (
   <CampaignContainer>
     <Grid>
@@ -86,9 +79,7 @@ export const Campaign = props => (
           <Triangle color={props.color} />
           <Card>
             <CardContent>
-              <div>
-                <span>{props.prompt}</span>
-              </div>
+              <span>{props.prompt}</span>
             </CardContent>
           </Card>
         </Col>

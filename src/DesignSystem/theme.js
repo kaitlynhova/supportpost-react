@@ -23,7 +23,7 @@ export const theme = {
   fontSizes: {
     p: 25,
     h1: 45,
-    card: 2.5
+    card: 2.9
   },
   weights: weights,
   colors: {
