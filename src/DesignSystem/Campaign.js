@@ -3,39 +3,9 @@ import PropTypes from "prop-types";
 import { theme } from "./theme";
 import styled from "styled-components";
 import Button from "./Button";
+import Card from "./Card";
 
 import { Grid, Row, Col } from "react-bootstrap";
-
-const Card = styled.div`
-  background-color: ${theme.colors.whitesmoke};
-  padding-bottom: 100%;
-  position: relative;
-  margin-top: -17vw;
-`;
-
-const CardContent = styled.div`
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-
-  font-size: ${theme.fontSizes.card}vw;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  /* Vertical Centering */
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: ${theme.space.standard}px;
-  z-index: 1;
-`;
 
 const CampaignContainer = styled.div`
   font-family: ${theme.fonts.primary};
@@ -54,16 +24,6 @@ const Description = styled.p`
   padding-bottom: ${theme.space.standard / 2}px;
 `;
 
-const Triangle = styled.div`
-  width: 0;
-  height: 0;
-  border-left: 0px solid transparent;
-  border-right: 17vw solid transparent;
-  border-top: 17vw solid ${props => props.color};
-  position: relative;
-  z-index: 1;
-`;
-
 export const Campaign = props => (
   <CampaignContainer>
     <Grid>
@@ -76,12 +36,7 @@ export const Campaign = props => (
           </a>
         </Col>
         <Col xs={12} md={4}>
-          <Triangle color={props.color} />
-          <Card>
-            <CardContent>
-              <span>{props.prompt}</span>
-            </CardContent>
-          </Card>
+          <Card color={props.color} text={props.prompt} />
         </Col>
       </Row>
     </Grid>
