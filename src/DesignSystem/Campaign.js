@@ -11,6 +11,7 @@ const Card = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
+  margin-top: -15vw;
   :before {
     content: "";
     display: block;
@@ -36,6 +37,8 @@ const CardContent = styled.div`
     padding: ${theme.space.standard}px;
     font-size: ${theme.fontSizes.card}vw;
     color: ${theme.colors.black};
+    position: relative;
+    z-index: 1;
   }
 `;
 
@@ -56,6 +59,18 @@ const Description = styled.p`
   padding-bottom: ${theme.space.standard / 2}px;
 `;
 
+const Triangle = styled.div`
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 15vw solid transparent;
+  border-top: 15vw solid ${props => props.color};
+  position: relative;
+  z-index: 1;
+`;
+
+debugger;
+
 export const Campaign = props => (
   <CampaignContainer>
     <Grid>
@@ -68,6 +83,7 @@ export const Campaign = props => (
           </a>
         </Col>
         <Col xs={12} md={4}>
+          <Triangle color={props.color} />
           <Card>
             <CardContent>
               <div>
