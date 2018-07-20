@@ -43,7 +43,7 @@ export const Campaign = props => (
         </Col>
         <Col xs={12} md={4}>
           <CardContainer>
-            <Card color={props.color} text={props.prompt} />
+            <Card color={props.color} text={props.prompt + "..."} />
           </CardContainer>
         </Col>
       </Row>

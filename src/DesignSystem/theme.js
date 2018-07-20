@@ -1,29 +1,38 @@
+export const breakpoints = {
+  large: 1170,
+  medium: 992,
+  small: 750
+};
+
 export const container = {
   max_width: 1220
 };
-export const spacing = {
-  none: 0,
-  standard: 30,
-  body: 120
+
+export const lineheights = {
+  p: 40
 };
 
-export const breakpoints = {
-  small: 750,
-  medium: 970,
-  large: 1170
+export const spacing = {
+  body: 120,
+  none: 0,
+  standard: 30
 };
 
 export const weights = {
+  bold: 700,
   light: 300,
-  normal: 400,
   medium: 600,
-  bold: 700
+  normal: 400
 };
 
 export const theme = {
   breakpoints: breakpoints,
+  colors: {
+    black: "#000000",
+    white: "#FFFFFF",
+    whitesmoke: "#F5F5F5"
+  },
   container: container,
-  space: spacing,
   fonts: {
     primary: "europa"
   },
@@ -32,10 +41,7 @@ export const theme = {
     h1: 45,
     card: 2.9
   },
-  weights: weights,
-  colors: {
-    black: "#000000",
-    white: "#FFFFFF",
-    whitesmoke: "#F5F5F5"
-  }
+  lineheight: lineheights,
+  space: spacing,
+  weights: weights
 };

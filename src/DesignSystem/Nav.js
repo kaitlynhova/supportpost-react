@@ -58,7 +58,7 @@ const Nav = props => (
       </a>
       <ul>
         <li>
-          <a href="/">How it works</a>
+          <a href="/about">How it works</a>
         </li>
         <li className="post">
           <a href="/">Post!</a>

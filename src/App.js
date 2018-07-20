@@ -7,14 +7,14 @@ import CardDisplayPage from "./Pages/CardDisplayPage/CardDisplayPage";
 import Campaigns from "./Pages/Campaigns/Campaigns";
 import Cards from "./Pages/Cards/Cards";
 import Home from "./Pages/Home/Home";
-import GridTest from "./Pages/GridTest/GridTest";
+import About from "./Pages/About/About";
 
 const Navigation = () => (
   <Router>
     <div>
       <Nav />
       <Route exact path="/" component={Home} />
-      <Route exact path="/grid" component={GridTest} />
+      <Route exact path="/about" component={About} />
       <Route
         exact
         path="/cards/:campaign_id"
