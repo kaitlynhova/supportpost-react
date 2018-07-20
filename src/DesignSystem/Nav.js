@@ -14,6 +14,11 @@ const NavContainer = styled.div`
     color: ${theme.colors.black};
     font-family: ${theme.fonts.primary};
   }
+  span {
+    @media only screen and (max-width: ${theme.breakpoints.small}px) {
+      display: none;
+    }
+  }
   h2 {
     color: ${theme.colors.black};
     display: inline;
@@ -47,7 +52,9 @@ const Nav = props => (
     <NavContainer>
       <a href="/">
         <img src="logo.svg" />
-        <h2>SupportPost</h2>
+        <h2>
+          S<span>upport</span>P<span>ost</span>
+        </h2>
       </a>
       <ul>
         <li>

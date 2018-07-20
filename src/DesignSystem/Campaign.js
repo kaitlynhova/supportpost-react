@@ -24,6 +24,12 @@ const Description = styled.p`
   padding-bottom: ${theme.space.standard / 2}px;
 `;
 
+const CardContainer = styled.div`
+  @media only screen and (max-width: ${theme.breakpoints.medium}px) {
+    display: none;
+  }
+`;
+
 export const Campaign = props => (
   <CampaignContainer>
     <Grid>
@@ -36,7 +42,9 @@ export const Campaign = props => (
           </a>
         </Col>
         <Col xs={12} md={4}>
-          <Card color={props.color} text={props.prompt} />
+          <CardContainer>
+            <Card color={props.color} text={props.prompt} />
+          </CardContainer>
         </Col>
       </Row>
     </Grid>
