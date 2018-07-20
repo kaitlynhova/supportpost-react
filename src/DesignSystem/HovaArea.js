@@ -35,6 +35,7 @@ export const HovaImage = styled.div`
   img {
     display: block;
     margin: 0 auto;
+    padding-top: ${theme.space.standard}px;
     max-width: 300px;
   }
 `;
