@@ -5,6 +5,7 @@ import Body from "../../DesignSystem/Body";
 import Campaign from "../../DesignSystem/Campaign";
 import Hero from "../../DesignSystem/Hero";
 import "../../Utils/FirebaseConfig";
+import HovaArea from "../../DesignSystem/HovaArea";
 
 class Home extends Component {
   constructor(props) {
@@ -30,10 +31,13 @@ class Home extends Component {
       return <Campaign {...campaign} key={i} />;
     });
     return (
-      <Body>
-        <Hero />
-        <Container>{campaignList}</Container>
-      </Body>
+      <span>
+        <Body>
+          <Hero />
+          <Container>{campaignList}</Container>
+        </Body>
+        <HovaArea />
+      </span>
     );
   }
 }
