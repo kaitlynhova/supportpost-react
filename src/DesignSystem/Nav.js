@@ -51,7 +51,7 @@ const Nav = props => (
   <span>
     <NavContainer>
       <a href="/">
-        <img src="logo.svg" />
+        <img src={require("../Images/logo.svg")} />
         <h2>
           S<span>upport</span>P<span>ost</span>
         </h2>
