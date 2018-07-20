@@ -3,7 +3,14 @@ export const container = {
 };
 export const spacing = {
   none: 0,
-  standard: 30
+  standard: 30,
+  body: 120
+};
+
+export const breakpoints = {
+  small: 750,
+  medium: 970,
+  large: 1170
 };
 
 export const weights = {
@@ -14,7 +21,7 @@ export const weights = {
 };
 
 export const theme = {
-  breakpoints: [32, 48, 64, 80],
+  breakpoints: breakpoints,
   container: container,
   space: spacing,
   fonts: {

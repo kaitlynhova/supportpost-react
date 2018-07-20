@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import firebase from "firebase";
 
 import "../../Utils/FirebaseConfig";
-
+import Body from "../../DesignSystem/Body";
 import Campaign from "../../DesignSystem/Campaign";
 import CampaignForm from "../../Components/CampaignForm/CampaignForm";
 
@@ -36,11 +36,11 @@ class Campaigns extends Component {
       return <Campaign {...campaign} key={i} />;
     });
     return (
-      <div>
+      <Body>
         <h1>SupportCard Campaigns</h1>
         <CampaignForm addCampaign={this.addCampaign} />
         {campaignList}
-      </div>
+      </Body>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 import { Container } from "../../DesignSystem/Container";
-
+import Body from "../../DesignSystem/Body";
 import Campaign from "../../DesignSystem/Campaign";
 import "../../Utils/FirebaseConfig";
 
@@ -29,9 +29,9 @@ class Home extends Component {
       return <Campaign {...campaign} key={i} />;
     });
     return (
-      <div>
+      <Body>
         <Container>{campaignList}</Container>
-      </div>
+      </Body>
     );
   }
 }
