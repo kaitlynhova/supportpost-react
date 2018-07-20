@@ -3,6 +3,7 @@ import firebase from "firebase";
 import { Container } from "../../DesignSystem/Container";
 import Body from "../../DesignSystem/Body";
 import Campaign from "../../DesignSystem/Campaign";
+import Hero from "../../DesignSystem/Hero";
 import "../../Utils/FirebaseConfig";
 
 class Home extends Component {
@@ -30,6 +31,7 @@ class Home extends Component {
     });
     return (
       <Body>
+        <Hero />
         <Container>{campaignList}</Container>
       </Body>
     );

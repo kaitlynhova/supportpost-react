@@ -9,7 +9,8 @@ export const container = {
 };
 
 export const lineheights = {
-  p: 40
+  p: 40,
+  h2: 55
 };
 
 export const spacing = {
@@ -37,8 +38,11 @@ export const theme = {
     primary: "europa"
   },
   fontSizes: {
+    title: 60,
+    subtitle: 40,
     p: 22,
     h1: 45,
+    h2: 35,
     card: 2.9
   },
   lineheight: lineheights,

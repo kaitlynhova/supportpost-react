@@ -9,8 +9,8 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 const CampaignContainer = styled.div`
   font-family: ${theme.fonts.primary};
-  padding: ${theme.space.standard}px;
   margin-bottom: ${theme.space.standard}px;
+  padding-bottom: ${theme.space.standard * 2}px;
 `;
 
 const Title = styled.h1`
@@ -22,6 +22,7 @@ const Title = styled.h1`
 const Description = styled.p`
   font-size: ${theme.fontSizes.p}px;
   padding-bottom: ${theme.space.standard / 2}px;
+  line-height: ${theme.lineheight.p}px;
 `;
 
 const CardContainer = styled.div`

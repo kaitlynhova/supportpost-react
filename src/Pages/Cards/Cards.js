@@ -4,6 +4,11 @@ import CardForm from "../../Components/CardForm/CardForm";
 import "../../Utils/FirebaseConfig";
 import firebase from "firebase";
 
+import { Grid, Row, Col } from "react-bootstrap";
+import Container from "../../DesignSystem/Container";
+
+import Body from "../../DesignSystem/Body";
+
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -36,14 +41,16 @@ class Cards extends Component {
       return <Card {...card} key={i} />;
     });
     return (
-      <div>
-        <h1>SupportCards</h1>
-        <CardForm
-          addCard={this.addCard}
-          campaignId={this.props.match.params.campaign_id}
-        />
-        {cardList}
-      </div>
+      <Body>
+        <Container>
+          <h1>SupportCards</h1>
+          <CardForm
+            addCard={this.addCard}
+            campaignId={this.props.match.params.campaign_id}
+          />
+          {cardList}
+        </Container>
+      </Body>
     );
   }
 }
