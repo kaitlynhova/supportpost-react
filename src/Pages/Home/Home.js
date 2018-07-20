@@ -30,7 +30,6 @@ class Home extends Component {
     });
     return (
       <div>
-        Home page
         <Container>{campaignList}</Container>
       </div>
     );

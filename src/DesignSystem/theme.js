@@ -21,7 +21,7 @@ export const theme = {
     primary: "europa"
   },
   fontSizes: {
-    p: 25,
+    p: 22,
     h1: 45,
     card: 2.9
   },

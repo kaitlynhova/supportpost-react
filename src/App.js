@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import NavBar from "./Components/NavBar/NavBar";
+import Nav from "./DesignSystem/Nav";
 
 import CardDisplayPage from "./Pages/CardDisplayPage/CardDisplayPage";
 import Campaigns from "./Pages/Campaigns/Campaigns";
@@ -12,7 +12,7 @@ import GridTest from "./Pages/GridTest/GridTest";
 const Navigation = () => (
   <Router>
     <div>
-      <NavBar />
+      <Nav />
       <Route exact path="/" component={Home} />
       <Route exact path="/grid" component={GridTest} />
       <Route

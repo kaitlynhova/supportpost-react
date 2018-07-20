@@ -11,6 +11,7 @@ const CampaignContainer = styled.div`
   font-family: ${theme.fonts.primary};
   padding: ${theme.space.standard}px;
   margin-bottom: ${theme.space.standard}px;
+  padding-top: ${theme.space.standard * 4}px;
 `;
 
 const Title = styled.h1`
