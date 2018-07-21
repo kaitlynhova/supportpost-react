@@ -47,7 +47,7 @@ const HovaArea = props => (
     <Container>
       <Title>
         <img alt="Logo" src={logo} />
-        <span>SupportPost</span>
+        <span>Support Post</span>
         <p>is powered by the nice people (and cat) at</p>
         <a href="http://www.hovalabs.com/">
           <strong>Hova Labs</strong>

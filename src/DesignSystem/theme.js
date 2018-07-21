@@ -10,7 +10,7 @@ export const container = {
 
 export const lineheights = {
   p: 40,
-  h2: 55
+  h2: 60
 };
 
 export const spacing = {

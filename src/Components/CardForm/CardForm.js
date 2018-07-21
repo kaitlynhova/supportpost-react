@@ -3,6 +3,7 @@ import { Col } from 'react-bootstrap';
 import Input from '../../DesignSystem/Input';
 
 import { Button } from '../../DesignSystem/Button';
+import { PageHeader } from '../../DesignSystem/PageHeader';
 
 class CardForm extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class CardForm extends Component {
     return (
       <div className="formWrapper">
         <Col xs={12}>
-          <h1>{this.props.prompt}</h1>
+          <PageHeader>{this.props.prompt}</PageHeader>
         </Col>
         <Col xs={12}>
           <Input
@@ -72,7 +73,7 @@ class CardForm extends Component {
           />
         </Col>
         <Col xs={12} md={4}>
-          <div className="noteButton" onClick={this.submitCard} onKeyPress={this.submitCard}>
+          <div onClick={this.submitCard} onKeyPress={this.submitCard}>
             <Button color={this.props.color}>Submit</Button>
           </div>
         </Col>

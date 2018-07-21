@@ -8,6 +8,7 @@ import '../../Utils/FirebaseConfig';
 
 import { Container } from '../../DesignSystem/Container';
 import { CardAgPage } from '../../DesignSystem/CardAgPage';
+import { CardList } from '../../DesignSystem/CardList';
 
 import { Body } from '../../DesignSystem/Body';
 
@@ -81,7 +82,9 @@ class Cards extends React.Component {
                 prompt={this.state.campaign.prompt}
               />
             </Row>
-            <Row>{cardList}</Row>
+            <Row>
+              <CardList>{cardList}</CardList>
+            </Row>
           </Container>
         </Body>
       </CardAgPage>
