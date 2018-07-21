@@ -7,7 +7,7 @@ import logo from '../Images/logo.svg';
 const NavContainer = styled.div`
   background-color: ${theme.colors.white};
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-  padding: ${theme.space.standard / 2}px;
+  padding: ${theme.space.standard / 2 - 1}px;
   position: fixed;
   width: 100%;
   z-index: 20;
