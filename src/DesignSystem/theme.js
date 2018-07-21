@@ -43,7 +43,8 @@ export const theme = {
     p: 22,
     h1: 45,
     h2: 35,
-    card: 2.9
+    card: 2.9,
+    cardname: 25
   },
   lineheight: lineheights,
   space: spacing,

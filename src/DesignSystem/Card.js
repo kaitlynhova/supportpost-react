@@ -30,6 +30,10 @@ const CardContent = styled.div`
   align-items: center;
   padding: ${theme.space.standard}px;
   z-index: 1;
+  p {
+    font-size: ${theme.fontSizes.cardname}px;
+    padding-top: ${theme.space.standard / 3}px;
+  }
 `;
 
 const Triangle = styled.div`
@@ -42,12 +46,18 @@ const Triangle = styled.div`
   z-index: 1;
 `;
 
+const generateCardAuthor = props =>
+  props.name ? "- " + props.name + ", " + props.location : "";
+
 const Card = props => (
   <span>
     <Triangle color={props.color} />
     <CardContainer>
       <CardContent>
-        <span>{props.text}</span>
+        <span>
+          {props.text}
+          {props.name && <p> {generateCardAuthor(props)}</p>}
+        </span>
       </CardContent>
     </CardContainer>
   </span>

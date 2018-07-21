@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import Input from "../../DesignSystem/Input";
+import { Grid, Row, Col } from "react-bootstrap";
+
+import Button from "../../DesignSystem/Button";
 
 class CardForm extends Component {
   constructor(props) {
@@ -15,7 +19,7 @@ class CardForm extends Component {
     this.submitCard = this.submitCard.bind(this);
   }
   handleUserInput(e) {
-    var returnObject = this.state;
+    const returnObject = this.state;
     returnObject[e.target.name] = e.target.value;
     this.setState(returnObject);
   }
@@ -39,34 +43,46 @@ class CardForm extends Component {
   render() {
     return (
       <div className="formWrapper">
-        <p>I believe in keeping families together because:</p>
-        <input
-          name="reason"
-          placeholder="super good reason"
-          value={this.state.reason}
-          onChange={this.handleUserInput}
-        />
-        <input
-          name="name"
-          placeholder="my name"
-          value={this.state.name}
-          onChange={this.handleUserInput}
-        />
-        <input
-          name="email"
-          placeholder="my email"
-          value={this.state.email}
-          onChange={this.handleUserInput}
-        />
-        <input
-          name="location"
-          placeholder="my location"
-          value={this.state.location}
-          onChange={this.handleUserInput}
-        />
-        <button className="noteButton" onClick={this.submitCard}>
-          Submit
-        </button>
+        <Col xs={12}>
+          <h1>{this.props.prompt}</h1>
+        </Col>
+        <Col xs={12}>
+          <Input
+            name="reason"
+            placeholder="My Reason:"
+            value={this.state.reason}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+        <Col xs={12} md={4}>
+          <Input
+            name="name"
+            placeholder="Name:"
+            value={this.state.name}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+        <Col xs={12} md={4}>
+          <Input
+            name="email"
+            placeholder="Email:"
+            value={this.state.email}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+        <Col xs={12} md={4}>
+          <Input
+            name="location"
+            placeholder="Location:"
+            value={this.state.location}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+        <Col xs={12} md={4}>
+          <div className="noteButton" onClick={this.submitCard}>
+            <Button color={this.props.color}> Submit </Button>
+          </div>
+        </Col>
       </div>
     );
   }
