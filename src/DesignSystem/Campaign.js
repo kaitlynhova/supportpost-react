@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { theme } from "./theme";
-import styled from "styled-components";
-import Button from "./Button";
-import Card from "./Card";
-
-import { Grid, Row, Col } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { theme } from './theme';
+import { Button } from './Button';
+import { Card } from './Card';
 
 const CampaignContainer = styled.div`
   font-family: ${theme.fonts.primary};
@@ -38,13 +37,13 @@ export const Campaign = props => (
         <Col xs={12} md={8}>
           <Title>{props.title}</Title>
           <Description>{props.description}</Description>
-          <a href={"/cards/" + props.id}>
+          <a href={`/cards/${props.id}`}>
             <Button>Post Your Support</Button>
           </a>
         </Col>
         <Col xs={12} md={4}>
           <CardContainer>
-            <Card color={props.color} text={props.prompt + "..."} />
+            <Card color={props.color} text={`${props.prompt}...`} />
           </CardContainer>
         </Col>
       </Row>
@@ -57,5 +56,3 @@ Campaign.propTypes = PropTypes.shape({
   description: PropTypes.string,
   id: PropTypes.string
 });
-
-export default Campaign;

@@ -1,7 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { theme } from "./theme";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { theme } from './theme';
+import logo from '../Images/logo.svg';
 
 const NavContainer = styled.div`
   background-color: ${theme.colors.white};
@@ -51,7 +52,7 @@ const Nav = props => (
   <span>
     <NavContainer>
       <a href="/">
-        <img src={require("../Images/logo.svg")} />
+        <img alt="logo" src={logo} />
         <h2>
           S<span>upport</span>P<span>ost</span>
         </h2>

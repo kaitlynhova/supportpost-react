@@ -1,5 +1,5 @@
-import { theme } from "./theme";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { theme } from './theme';
 
 export const CardShow = styled.div`
   font-family: ${theme.fonts.primary};

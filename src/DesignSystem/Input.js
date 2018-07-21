@@ -1,6 +1,6 @@
-import React from "react";
-import { theme } from "./theme";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { theme } from './theme';
 
 export const InputStyle = styled.div`
   background: ${theme.colors.white};
@@ -15,8 +15,7 @@ export const InputStyle = styled.div`
   }
   p {
     font-size: ${theme.fontSizes.p}px;
-    padding: ${theme.space.standard / 2}px 0 ${theme.space.standard / 2}px
-      ${theme.space.standard / 2}px;
+    padding: ${theme.space.standard / 2}px 0 ${theme.space.standard / 2}px ${theme.space.standard / 2}px;
     margin: 0;
     white-space: nowrap;
   }
@@ -25,12 +24,7 @@ export const InputStyle = styled.div`
 const Input = props => (
   <InputStyle>
     <p>{props.placeholder}</p>
-    <input
-      name={props.name}
-      placeholder="..."
-      value={props.value}
-      onChange={props.handleUserInput}
-    />
+    <input name={props.name} placeholder="..." value={props.value} onChange={props.handleUserInput} />
   </InputStyle>
 );
 

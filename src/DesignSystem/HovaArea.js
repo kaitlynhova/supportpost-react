@@ -1,7 +1,10 @@
-import React from "react";
-import { theme } from "./theme";
-import styled from "styled-components";
-import Container from "../DesignSystem/Container";
+import React from 'react';
+import styled from 'styled-components';
+import { theme } from './theme';
+import { Container } from './Container';
+
+import logo from '../Images/logo.svg';
+import hovaLabs from '../Images/thehovas.png';
 
 export const Title = styled.div`
   text-align: center;
@@ -27,8 +30,7 @@ export const Title = styled.div`
 
 export const HovaBackground = styled.div`
   background-color: ${theme.colors.whitesmoke};
-  padding: ${theme.space.standard * 2}px ${theme.space.standard}px 0
-    ${theme.space.standard}px;
+  padding: ${theme.space.standard * 2}px ${theme.space.standard}px 0 ${theme.space.standard}px;
 `;
 
 export const HovaImage = styled.div`
@@ -44,7 +46,7 @@ const HovaArea = props => (
   <HovaBackground>
     <Container>
       <Title>
-        <img src={require("../Images/logo.svg")} />
+        <img alt="Logo" src={logo} />
         <span>SupportPost</span>
         <p>is powered by the nice people (and cat) at</p>
         <a href="http://www.hovalabs.com/">
@@ -52,7 +54,7 @@ const HovaArea = props => (
         </a>
       </Title>
       <HovaImage>
-        <img src={require("../Images/thehovas.png")} />
+        <img alt="Hova Labs" src={hovaLabs} />
       </HovaImage>
     </Container>
   </HovaBackground>

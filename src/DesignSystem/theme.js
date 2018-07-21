@@ -27,15 +27,15 @@ export const weights = {
 };
 
 export const theme = {
-  breakpoints: breakpoints,
+  breakpoints,
   colors: {
-    black: "#000000",
-    white: "#FFFFFF",
-    whitesmoke: "#F5F5F5"
+    black: '#000000',
+    white: '#FFFFFF',
+    whitesmoke: '#F5F5F5'
   },
-  container: container,
+  container,
   fonts: {
-    primary: "europa"
+    primary: 'europa'
   },
   fontSizes: {
     title: 60,
@@ -48,5 +48,5 @@ export const theme = {
   },
   lineheight: lineheights,
   space: spacing,
-  weights: weights
+  weights
 };

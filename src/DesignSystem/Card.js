@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { theme } from "./theme";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { theme } from './theme';
 
 const CardContainer = styled.div`
   background-color: ${theme.colors.whitesmoke};
@@ -46,21 +46,30 @@ const Triangle = styled.div`
   z-index: 1;
 `;
 
-const generateCardAuthor = props =>
-  props.name ? "- " + props.name + ", " + props.location : "";
+const generateCardAuthor = (name, location) => (name ? `- ${name}, ${location}` : '');
 
-const Card = props => (
+export const Card = props => (
   <span>
     <Triangle color={props.color} />
     <CardContainer>
       <CardContent>
         <span>
           {props.text}
-          {props.name && <p> {generateCardAuthor(props)}</p>}
+          {props.name && <p> {generateCardAuthor(props.name, props.location)}</p>}
         </span>
       </CardContent>
     </CardContainer>
   </span>
 );
 
-export default Card;
+Card.defaultProps = {
+  name: '',
+  location: ''
+};
+
+Card.propTypes = {
+  text: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  location: PropTypes.string,
+  color: PropTypes.string.isRequired
+};

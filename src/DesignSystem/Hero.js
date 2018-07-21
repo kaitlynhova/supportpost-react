@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { theme } from "./theme";
-import styled from "styled-components";
-import Container from "../DesignSystem/Container";
-
-import { Grid, Row, Col } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { theme } from './theme';
+import { Container } from './Container';
 
 export const HeroText = styled.div`
   padding-bottom: ${theme.space.standard * 2}px;
@@ -17,7 +16,7 @@ export const HeroText = styled.div`
   }
 `;
 
-const Hero = props => (
+export const Hero = props => (
   <Container>
     <Grid>
       <Row>
@@ -25,8 +24,7 @@ const Hero = props => (
           <HeroText>
             <h1>SUPPORT POST</h1>
             <h2>
-              Aggregating positive policy rational and connecting you to your
-              representatives to make a difference.
+              Aggregating positive policy rational and connecting you to your representatives to make a difference.
             </h2>
           </HeroText>
         </Col>
@@ -34,5 +32,3 @@ const Hero = props => (
     </Grid>
   </Container>
 );
-
-export default Hero;

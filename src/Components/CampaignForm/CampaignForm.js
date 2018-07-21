@@ -1,25 +1,27 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class CampaignForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
-      createdAt: "",
-      title: "",
-      description: "",
-      prompt: "",
-      note: "",
-      color: ""
+      id: '',
+      createdAt: '',
+      title: '',
+      description: '',
+      prompt: '',
+      note: '',
+      color: ''
     };
     this.handleUserInput = this.handleUserInput.bind(this);
     this.submitCampaign = this.submitCampaign.bind(this);
   }
+
   handleUserInput(e) {
-    var returnObject = this.state;
+    const returnObject = this.state;
     returnObject[e.target.name] = e.target.value;
     this.setState(returnObject);
   }
+
   submitCampaign() {
     this.props.addCampaign({
       id: this.state.id,
@@ -31,48 +33,29 @@ class CampaignForm extends Component {
       color: this.state.color
     });
     this.setState({
-      title: "",
-      description: "",
-      prompt: "",
-      note: "",
-      color: ""
+      title: '',
+      description: '',
+      prompt: '',
+      note: '',
+      color: ''
     });
   }
+
   render() {
     return (
       <div className="formWrapper">
         <p>SupportCard Campaigns</p>
-        <input
-          name="title"
-          placeholder="title goes here"
-          value={this.state.title}
-          onChange={this.handleUserInput}
-        />
+        <input name="title" placeholder="title goes here" value={this.state.title} onChange={this.handleUserInput} />
         <input
           name="description"
           placeholder="my description"
           value={this.state.description}
           onChange={this.handleUserInput}
         />
-        <input
-          name="prompt"
-          placeholder="my prompt"
-          value={this.state.prompt}
-          onChange={this.handleUserInput}
-        />
-        <input
-          name="note"
-          placeholder="my note"
-          value={this.state.note}
-          onChange={this.handleUserInput}
-        />
-        <input
-          name="color"
-          placeholder="my color"
-          value={this.state.color}
-          onChange={this.handleUserInput}
-        />
-        <button className="campaignButton" onClick={this.submitCampaign}>
+        <input name="prompt" placeholder="my prompt" value={this.state.prompt} onChange={this.handleUserInput} />
+        <input name="note" placeholder="my note" value={this.state.note} onChange={this.handleUserInput} />
+        <input name="color" placeholder="my color" value={this.state.color} onChange={this.handleUserInput} />
+        <button className="campaignButton" type="submit" onClick={this.submitCampaign}>
           Submit
         </button>
       </div>
