@@ -53,21 +53,35 @@ class CardForm extends Component {
         <Col xs={12}>
           <Input
             name="reason"
-            placeholder="My Reason:"
+            label="My Reason:"
+            placeholder="..."
             value={this.state.reason}
             handleUserInput={this.handleUserInput}
           />
         </Col>
         <Col xs={12} md={4}>
-          <Input name="name" placeholder="Name:" value={this.state.name} handleUserInput={this.handleUserInput} />
+          <Input
+            name="name"
+            label="Name:"
+            placeholder="..."
+            value={this.state.name}
+            handleUserInput={this.handleUserInput}
+          />
         </Col>
         <Col xs={12} md={4}>
-          <Input name="email" placeholder="Email:" value={this.state.email} handleUserInput={this.handleUserInput} />
+          <Input
+            name="email"
+            label="Email:"
+            placeholder="..."
+            value={this.state.email}
+            handleUserInput={this.handleUserInput}
+          />
         </Col>
         <Col xs={12} md={4}>
           <Input
             name="location"
-            placeholder="Location:"
+            label="Location:"
+            placeholder="City, State"
             value={this.state.location}
             handleUserInput={this.handleUserInput}
           />

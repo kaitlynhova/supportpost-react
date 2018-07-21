@@ -9,6 +9,7 @@ import '../../Utils/FirebaseConfig';
 import { Container } from '../../DesignSystem/Container';
 import { CardAgPage } from '../../DesignSystem/CardAgPage';
 import { CardList } from '../../DesignSystem/CardList';
+import { Link } from '../../DesignSystem/Link';
 
 import { Body } from '../../DesignSystem/Body';
 
@@ -64,13 +65,15 @@ class Cards extends React.Component {
   render() {
     const cardList = this.state.cards.map((card, i) => (
       <Col xs={12} sm={6} md={4} key={i}>
-        <Card
-          text={card.reason}
-          name={card.name}
-          location={card.location}
-          id={card.id}
-          color={this.state.campaign.color}
-        />
+        <Link href={`/card/${card.id}`}>
+          <Card
+            text={card.reason}
+            name={card.name}
+            location={card.location}
+            id={card.id}
+            color={this.state.campaign.color}
+          />
+        </Link>
       </Col>
     ));
     return (

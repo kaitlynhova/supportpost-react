@@ -11,6 +11,7 @@ export const InputStyle = styled.div`
     border: 0;
     width: 100%;
     outline: none;
+    font-size: ${theme.fontSizes.p}px;
     padding: ${theme.space.standard / 2}px;
   }
   p {
@@ -23,8 +24,8 @@ export const InputStyle = styled.div`
 
 const Input = props => (
   <InputStyle>
-    <p>{props.placeholder}</p>
-    <input name={props.name} placeholder="..." value={props.value} onChange={props.handleUserInput} />
+    <p>{props.label}</p>
+    <input name={props.name} placeholder={props.placeholder} value={props.value} onChange={props.handleUserInput} />
   </InputStyle>
 );
 
