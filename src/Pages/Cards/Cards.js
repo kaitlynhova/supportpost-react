@@ -32,7 +32,7 @@ class Cards extends React.Component {
 
   handleNewCard(snap) {
     const newCard = snap.val();
-    if (newCard.campaignId == this.props.match.params.campaign_id) {
+    if (newCard.campaignId === this.props.match.params.campaign_id) {
       newCard.id = snap.key;
       this.setState({ cards: [...this.state.cards, newCard] });
       this.getCampaign();
