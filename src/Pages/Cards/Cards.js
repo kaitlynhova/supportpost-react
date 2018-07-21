@@ -20,7 +20,6 @@ class Cards extends React.Component {
       .database()
       .ref()
       .child('cards');
-
     this.state = {
       cards: [],
       campaign: {}
@@ -42,7 +41,7 @@ class Cards extends React.Component {
 
   getCampaign() {
     const campaignId = this.state.cards[0].campaignId;
-    this.db = firebase
+    this.db2 = firebase
       .database()
       .ref()
       .child('campaigns')
@@ -54,8 +53,12 @@ class Cards extends React.Component {
   }
 
   addCard(card) {
-    this.setState({ cards: [...this.state.cards, card] });
-    this.db.push(card);
+    if (card.name && card.location && card.name && card.email) {
+      this.setState({ cards: [...this.state.cards, card] });
+      this.db.push(card);
+    } else {
+      alert('Fill out the form, plz.');
+    }
   }
 
   render() {
