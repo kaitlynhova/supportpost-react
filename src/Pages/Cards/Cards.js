@@ -7,7 +7,7 @@ import CardForm from '../../Components/CardForm/CardForm';
 import '../../Utils/FirebaseConfig';
 
 import { Container } from '../../DesignSystem/Container';
-import { CardAgPage } from '../../DesignSystem/CardAgPage';
+import { CardListPage } from '../../DesignSystem/CardListPage';
 import { CardList } from '../../DesignSystem/CardList';
 import { Link } from '../../DesignSystem/Link';
 
@@ -77,7 +77,7 @@ class Cards extends React.Component {
       </Col>
     ));
     return (
-      <CardAgPage>
+      <CardListPage>
         <Body>
           <Container>
             <Row>
@@ -93,7 +93,7 @@ class Cards extends React.Component {
             </Row>
           </Container>
         </Body>
-      </CardAgPage>
+      </CardListPage>
     );
   }
 }

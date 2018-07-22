@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import { Col } from 'react-bootstrap';
+import { Button } from '../../DesignSystem/Button';
+import Input from '../../DesignSystem/Input';
+
 class CampaignForm extends Component {
   constructor(props) {
     super(props);
@@ -44,20 +48,61 @@ class CampaignForm extends Component {
   render() {
     return (
       <div className="formWrapper">
-        <p>SupportCard Campaigns</p>
-        <input name="title" placeholder="title goes here" value={this.state.title} onChange={this.handleUserInput} />
-        <input
-          name="description"
-          placeholder="my description"
-          value={this.state.description}
-          onChange={this.handleUserInput}
-        />
-        <input name="prompt" placeholder="my prompt" value={this.state.prompt} onChange={this.handleUserInput} />
-        <input name="note" placeholder="my note" value={this.state.note} onChange={this.handleUserInput} />
-        <input name="color" placeholder="my color" value={this.state.color} onChange={this.handleUserInput} />
-        <button className="campaignButton" type="submit" onClick={this.submitCampaign}>
-          Submit
-        </button>
+        <Col xs={12}>
+          <Input
+            name="title"
+            label="Title:"
+            placeholder="..."
+            value={this.state.title}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+
+        <Col xs={12}>
+          <Input
+            name="description"
+            label="Description:"
+            placeholder="..."
+            value={this.state.description}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+
+        <Col xs={12}>
+          <Input
+            name="prompt"
+            label="Prompt:"
+            placeholder="..."
+            value={this.state.prompt}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+
+        <Col xs={12}>
+          <Input
+            name="note"
+            label="Note:"
+            placeholder="..."
+            value={this.state.note}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+
+        <Col xs={12} md={6}>
+          <Input
+            name="color"
+            label="Color:"
+            placeholder="..."
+            value={this.state.color}
+            handleUserInput={this.handleUserInput}
+          />
+        </Col>
+
+        <Col xs={12} md={4}>
+          <div onClick={this.submitCampaign} onKeyPress={this.submitCampaign}>
+            <Button>Submit</Button>
+          </div>
+        </Col>
       </div>
     );
   }

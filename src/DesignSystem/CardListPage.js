@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { theme } from './theme';
 
-export const CardAgPage = styled.div`
+export const CardListPage = styled.div`
   background-color: ${theme.colors.black};
 `;

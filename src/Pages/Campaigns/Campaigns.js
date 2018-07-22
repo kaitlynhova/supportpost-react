@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
+import { Grid, Row, Col } from 'react-bootstrap';
+import { Container } from '../../DesignSystem/Container';
+
 import '../../Utils/FirebaseConfig';
 import { Body } from '../../DesignSystem/Body';
 import { Campaign } from '../../DesignSystem/Campaign';
 import CampaignForm from '../../Components/CampaignForm/CampaignForm';
+import { CampaignListPage } from '../../DesignSystem/CampaignListPage';
 
 class Campaigns extends Component {
   constructor(props) {
@@ -37,11 +41,23 @@ class Campaigns extends Component {
   render() {
     const campaignList = this.state.campaigns.map((campaign, i) => <Campaign {...campaign} key={i} />);
     return (
-      <Body>
-        <h1>SupportCard Campaigns</h1>
-        <CampaignForm addCampaign={this.addCampaign} />
-        {campaignList}
-      </Body>
+      <CampaignListPage>
+        <Body>
+          <Container>
+            <Grid>
+              <Row>
+                <Col xs={12}>
+                  <Col xs={12}>
+                    <h1>New SupportCard Campaign</h1>
+                  </Col>
+                  <CampaignForm addCampaign={this.addCampaign} />
+                  {campaignList}
+                </Col>
+              </Row>
+            </Grid>
+          </Container>
+        </Body>
+      </CampaignListPage>
     );
   }
 }

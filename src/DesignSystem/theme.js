@@ -30,6 +30,7 @@ export const theme = {
   breakpoints,
   colors: {
     black: '#000000',
+    pink: '#f38083',
     white: '#FFFFFF',
     whitesmoke: '#F5F5F5'
   },
