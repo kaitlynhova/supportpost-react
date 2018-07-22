@@ -25,7 +25,13 @@ export const InputStyle = styled.div`
 const Input = props => (
   <InputStyle>
     <p>{props.label}</p>
-    <input name={props.name} placeholder={props.placeholder} value={props.value} onChange={props.handleUserInput} />
+    <input
+      name={props.name}
+      placeholder={props.placeholder}
+      value={props.value}
+      maxLength={props.name == 'reason' ? '' : '35'}
+      onChange={props.handleUserInput}
+    />
   </InputStyle>
 );
 

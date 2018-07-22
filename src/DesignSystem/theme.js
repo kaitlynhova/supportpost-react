@@ -19,6 +19,10 @@ export const spacing = {
   standard: 30
 };
 
+export const letterspacing = {
+  subtext: 3
+};
+
 export const weights = {
   bold: 700,
   light: 300,
@@ -46,8 +50,10 @@ export const theme = {
     h2: 35,
     card: 2.9,
     cardname: 25,
-    largecard: 75
+    largecard: 75,
+    subtext: 15
   },
+  letterspacing,
   lineheight: lineheights,
   space: spacing,
   weights

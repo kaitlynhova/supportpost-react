@@ -4,6 +4,7 @@ import Input from '../../DesignSystem/Input';
 
 import { Button } from '../../DesignSystem/Button';
 import { PageHeader } from '../../DesignSystem/PageHeader';
+import { CharacterCounter } from '../../DesignSystem/CharacterCounter';
 
 class CardForm extends Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class CardForm extends Component {
       email: '',
       reason: '',
       location: '',
-      name: ''
+      name: '',
+      reasonCount: 0
     };
+    this.handleReasonInput = this.handleReasonInput.bind(this);
     this.handleUserInput = this.handleUserInput.bind(this);
     this.submitCard = this.submitCard.bind(this);
   }
@@ -24,6 +27,15 @@ class CardForm extends Component {
     const returnObject = this.state;
     returnObject[e.target.name] = e.target.value;
     this.setState(returnObject);
+  }
+
+  handleReasonInput(e) {
+    if (e.target.value.length < 91) {
+      const returnObject = this.state;
+      returnObject[e.target.name] = e.target.value;
+      returnObject.reasonCount = e.target.value.length;
+      this.setState(returnObject);
+    }
   }
 
   submitCard() {
@@ -56,8 +68,9 @@ class CardForm extends Component {
             label="My Reason:"
             placeholder="..."
             value={this.state.reason}
-            handleUserInput={this.handleUserInput}
+            handleUserInput={this.handleReasonInput}
           />
+          <CharacterCounter>{this.state.reasonCount}/90</CharacterCounter>
         </Col>
         <Col xs={12} md={4}>
           <Input
