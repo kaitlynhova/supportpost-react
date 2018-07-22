@@ -48,7 +48,7 @@ class CardForm extends Component {
     return (
       <div className="formWrapper">
         <Col xs={12}>
-          <PageHeader>{this.props.prompt}</PageHeader>
+          <PageHeader>{this.props.prompt}...</PageHeader>
         </Col>
         <Col xs={12}>
           <Input

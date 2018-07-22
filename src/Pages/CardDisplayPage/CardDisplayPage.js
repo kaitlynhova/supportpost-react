@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 
 import { CardShow } from '../../DesignSystem';
+import { Body } from '../../DesignSystem/Body';
+import { Container } from '../../DesignSystem/Container';
+import { LargeCard } from '../../DesignSystem/LargeCard';
+import { TriangleLarge } from '../../DesignSystem/TriangleLarge';
+import { theme } from '../../DesignSystem/theme';
 
 import '../../Utils/FirebaseConfig';
 
@@ -34,7 +39,7 @@ class CardDisplayPage extends Component {
 
   getCampaign() {
     const campaignId = this.state.card.campaignId;
-    this.db = firebase
+    this.db2 = firebase
       .database()
       .ref()
       .child('campaigns')
@@ -48,12 +53,24 @@ class CardDisplayPage extends Component {
   render() {
     return (
       <CardShow>
-        <h1>SupportCard</h1>
-        <p>{this.state.card.reason}</p>
-        <p>
-          -{this.state.card.name} @ {this.state.card.location}
-        </p>
-        <p>campaign: {this.state.campaign.prompt}</p>
+        <TriangleLarge color={this.state.campaign.color || theme.colors.whitesmoke} />
+        <Body>
+          <Container>
+            <LargeCard>
+              <a href={`/cards/${this.state.card.campaignId}`}>← View more cards</a>
+              <p>
+                <strong>
+                  {this.state.campaign.prompt} <a href="#note">*</a>
+                </strong>{' '}
+                {this.state.card.reason}
+                <span>
+                  -{this.state.card.name} @ {this.state.card.location}
+                </span>
+              </p>
+              <i id="note">* {this.state.campaign.note}</i>
+            </LargeCard>
+          </Container>
+        </Body>
       </CardShow>
     );
   }

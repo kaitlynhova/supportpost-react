@@ -30,7 +30,7 @@ export const theme = {
   breakpoints,
   colors: {
     black: '#000000',
-    pink: '#f38083',
+    pink: '#f3808354',
     white: '#FFFFFF',
     whitesmoke: '#F5F5F5'
   },
@@ -45,7 +45,8 @@ export const theme = {
     h1: 45,
     h2: 35,
     card: 2.9,
-    cardname: 25
+    cardname: 25,
+    largecard: 75
   },
   lineheight: lineheights,
   space: spacing,
