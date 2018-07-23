@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-bootstrap';
+
 import { theme } from './theme';
 import { Button } from './Button';
 import { Card } from './Card';
@@ -12,22 +13,22 @@ const CampaignContainer = styled.div`
   padding-bottom: ${theme.space.standard * 2}px;
 `;
 
-const Title = styled.h1`
-  font-size: ${theme.fontSizes.h1}px;
-  margin: ${theme.space.none}px;
-  padding-bottom: ${theme.space.standard / 2}px;
-`;
-
-const Description = styled.p`
-  font-size: ${theme.fontSizes.p}px;
-  padding-bottom: ${theme.space.standard / 2}px;
-  line-height: ${theme.lineheight.p}px;
-`;
-
 const CardContainer = styled.div`
   @media only screen and (max-width: ${theme.breakpoints.medium}px) {
     display: none;
   }
+`;
+
+const Description = styled.p`
+  font-size: ${theme.fontSizes.p}px;
+  line-height: ${theme.lineheight.p}px;
+  padding-bottom: ${theme.space.standard / 2}px;
+`;
+
+const Title = styled.h1`
+  font-size: ${theme.fontSizes.h1}px;
+  margin: ${theme.space.none}px;
+  padding-bottom: ${theme.space.standard / 2}px;
 `;
 
 export const Campaign = props => (
@@ -52,7 +53,7 @@ export const Campaign = props => (
 );
 
 Campaign.propTypes = PropTypes.shape({
-  title: PropTypes.string,
   description: PropTypes.string,
-  id: PropTypes.string
+  id: PropTypes.string,
+  title: PropTypes.string
 });

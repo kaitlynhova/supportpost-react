@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-bootstrap';
+
 import { theme } from './theme';
 import { Container } from './Container';
 

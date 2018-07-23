@@ -13,8 +13,8 @@ export const LargeCard = styled.div`
   a {
     color: ${theme.colors.black};
     font-size: ${theme.fontSizes.largecard / 2}px;
-    text-decoration: none;
     position: relative;
+    text-decoration: none;
   }
   i {
     font-size: ${theme.fontSizes.p}px;

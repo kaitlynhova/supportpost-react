@@ -1,32 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { theme } from './theme';
 import { Container } from './Container';
-
 import logo from '../Images/logo.svg';
 import hovaLabs from '../Images/thehovas.png';
-
-export const Title = styled.div`
-  text-align: center;
-  font-size: ${theme.fontSizes.p}px;
-  line-height: ${theme.lineheight.p}px;
-  a {
-    color: ${theme.colors.black};
-  }
-  p {
-    padding-top: ${theme.space.standard / 6}px;
-    margin: ${theme.space.none}px;
-  }
-  img {
-    max-width: 30px;
-    margin-right: 10px;
-    margin-top: -10px;
-  }
-  span {
-    font-size: 30px;
-    display: inline;
-  }
-`;
 
 export const HovaBackground = styled.div`
   background-color: ${theme.colors.whitesmoke};
@@ -37,8 +15,30 @@ export const HovaImage = styled.div`
   img {
     display: block;
     margin: 0 auto;
+    max-width: ${theme.space.standard * 10}px;
     padding-top: ${theme.space.standard}px;
-    max-width: 300px;
+  }
+`;
+
+export const Title = styled.div`
+  font-size: ${theme.fontSizes.p}px;
+  line-height: ${theme.lineheight.p}px;
+  text-align: center;
+  a {
+    color: ${theme.colors.black};
+  }
+  img {
+    margin-right: ${theme.space.standard / 3}px;
+    margin-top: ${theme.space.standard / -3}px;
+    max-width: 30px;
+  }
+  p {
+    margin: ${theme.space.none}px;
+    padding-top: ${theme.space.standard / 6}px;
+  }
+  span {
+    display: inline;
+    font-size: 30px;
   }
 `;
 
