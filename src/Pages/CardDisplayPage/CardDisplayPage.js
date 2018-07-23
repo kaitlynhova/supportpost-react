@@ -21,7 +21,7 @@ class CardDisplayPage extends Component {
       .equalTo(this.props.match.params.card_id);
 
     this.state = {
-      campaign: {},
+      campaign: null,
       card: {}
     };
     this.handleCard = this.handleCard.bind(this);
@@ -51,8 +51,8 @@ class CardDisplayPage extends Component {
   }
 
   render() {
-    return (
-      <CardShow>
+    const CardStuff = this.state.campaign ? (
+      <span>
         <TriangleLarge color={this.state.campaign.color || theme.colors.whitesmoke} />
         <Body>
           <Container>
@@ -71,8 +71,11 @@ class CardDisplayPage extends Component {
             </LargeCard>
           </Container>
         </Body>
-      </CardShow>
+      </span>
+    ) : (
+      ''
     );
+    return <CardShow>{CardStuff}</CardShow>;
   }
 }
 
