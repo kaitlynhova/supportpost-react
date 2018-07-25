@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col } from 'react-bootstrap';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Input from '../../DesignSystem/Input';
 
 import { Button } from '../../DesignSystem/Button';
@@ -16,11 +17,17 @@ class CardForm extends Component {
       reason: '',
       location: '',
       name: '',
-      reasonCount: 0
+      reasonCount: 0,
+      recaptcha: ''
     };
+    this.updateRecaptcha = this.updateRecaptcha.bind(this);
     this.handleReasonInput = this.handleReasonInput.bind(this);
     this.handleUserInput = this.handleUserInput.bind(this);
     this.submitCard = this.submitCard.bind(this);
+  }
+
+  updateRecaptcha(value) {
+    this.setState({ recaptcha: value });
   }
 
   handleUserInput(e) {
@@ -39,21 +46,25 @@ class CardForm extends Component {
   }
 
   submitCard() {
-    this.props.addCard({
-      campaignId: this.props.campaignId,
-      id: this.state.id,
-      createdAt: Date.now(),
-      email: this.state.email,
-      reason: this.state.reason,
-      location: this.state.location,
-      name: this.state.name
-    });
-    this.setState({
-      email: '',
-      reason: '',
-      location: '',
-      name: ''
-    });
+    if (this.state.recaptcha) {
+      this.props.addCard({
+        campaignId: this.props.campaignId,
+        id: this.state.id,
+        createdAt: Date.now(),
+        email: this.state.email,
+        reason: this.state.reason,
+        location: this.state.location,
+        name: this.state.name
+      });
+      this.setState({
+        email: '',
+        reason: '',
+        location: '',
+        name: ''
+      });
+    } else {
+      alert('Nope, you have to do the reCAPTCHA thing');
+    }
   }
 
   render() {
@@ -98,6 +109,9 @@ class CardForm extends Component {
             value={this.state.location}
             handleUserInput={this.handleUserInput}
           />
+        </Col>
+        <Col xs={12} md={4}>
+          <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA_KEY} onChange={this.updateRecaptcha} />
         </Col>
         <Col xs={12} md={4}>
           <div onClick={this.submitCard} onKeyPress={this.submitCard}>

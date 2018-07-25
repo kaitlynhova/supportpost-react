@@ -58,7 +58,7 @@ class Cards extends React.Component {
       this.setState({ cards: [...this.state.cards, card] });
       this.db.push(card);
     } else {
-      alert('Fill out the form, plz.');
+      alert('All fields are required');
     }
   }
 
