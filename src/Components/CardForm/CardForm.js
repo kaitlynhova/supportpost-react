@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Col } from 'react-bootstrap';
-import ReCAPTCHA from 'react-google-recaptcha';
 import Input from '../../DesignSystem/Input';
 
 import { Button } from '../../DesignSystem/Button';
 import { PageHeader } from '../../DesignSystem/PageHeader';
 import { CharacterCounter } from '../../DesignSystem/CharacterCounter';
+import { Recaptcha } from '../../DesignSystem/Recaptcha';
 
 class CardForm extends Component {
   constructor(props) {
@@ -71,7 +71,10 @@ class CardForm extends Component {
     return (
       <div className="formWrapper">
         <Col xs={12}>
-          <PageHeader>{this.props.prompt}...</PageHeader>
+          <PageHeader>
+            {this.props.prompt}
+            ...
+          </PageHeader>
         </Col>
         <Col xs={12}>
           <Input
@@ -81,7 +84,10 @@ class CardForm extends Component {
             value={this.state.reason}
             handleUserInput={this.handleReasonInput}
           />
-          <CharacterCounter>{this.state.reasonCount}/90</CharacterCounter>
+          <CharacterCounter>
+            {this.state.reasonCount}
+            /90
+          </CharacterCounter>
         </Col>
         <Col xs={12} md={4}>
           <Input
@@ -110,9 +116,7 @@ class CardForm extends Component {
             handleUserInput={this.handleUserInput}
           />
         </Col>
-        <Col xs={12} md={4}>
-          <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA_KEY} onChange={this.updateRecaptcha} />
-        </Col>
+        <Recaptcha updateRecaptcha={this.updateRecaptcha} />
         <Col xs={12} md={4}>
           <div onClick={this.submitCard} onKeyPress={this.submitCard}>
             <Button color={this.props.color}>Submit</Button>
