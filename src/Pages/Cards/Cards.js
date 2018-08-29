@@ -31,17 +31,20 @@ class Cards extends React.Component {
     this.getCampaign = this.getCampaign.bind(this);
   }
 
+  componentDidMount() {
+    this.getCampaign();
+  }
+
   handleNewCard(snap) {
     const newCard = snap.val();
     if (newCard.campaignId === this.props.match.params.campaign_id) {
       newCard.id = snap.key;
       this.setState({ cards: [...this.state.cards, newCard] });
-      this.getCampaign();
     }
   }
 
   getCampaign() {
-    const campaignId = this.state.cards[0].campaignId;
+    const campaignId = window.location.pathname.split('cards/')[1];
     this.db2 = firebase
       .database()
       .ref()
@@ -76,7 +79,7 @@ class Cards extends React.Component {
         </Link>
       </Col>
     ));
-    return (
+    const pageContent = this.state.campaign.id !== undefined ? (
       <CardListPage>
         <Body>
           <Container>
@@ -94,7 +97,10 @@ class Cards extends React.Component {
           </Container>
         </Body>
       </CardListPage>
+    ) : (
+      ''
     );
+    return <span> {pageContent} </span>;
   }
 }
 
