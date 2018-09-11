@@ -83,6 +83,7 @@ class CardForm extends Component {
             placeholder="..."
             value={this.state.reason}
             handleUserInput={this.handleReasonInput}
+            maxLength={35}
           />
           <CharacterCounter>
             {this.state.reasonCount}
@@ -96,6 +97,7 @@ class CardForm extends Component {
             placeholder="..."
             value={this.state.name}
             handleUserInput={this.handleUserInput}
+            maxLength={35}
           />
         </Col>
         <Col xs={12} md={4}>
@@ -105,6 +107,7 @@ class CardForm extends Component {
             placeholder="..."
             value={this.state.email}
             handleUserInput={this.handleUserInput}
+            maxLength={35}
           />
         </Col>
         <Col xs={12} md={4}>
@@ -114,6 +117,7 @@ class CardForm extends Component {
             placeholder="City, State"
             value={this.state.location}
             handleUserInput={this.handleUserInput}
+            maxLength={35}
           />
         </Col>
         <Recaptcha updateRecaptcha={this.updateRecaptcha} />

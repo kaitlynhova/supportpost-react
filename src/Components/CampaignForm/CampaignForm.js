@@ -55,6 +55,7 @@ class CampaignForm extends Component {
             placeholder="..."
             value={this.state.title}
             handleUserInput={this.handleUserInput}
+            maxLength={350}
           />
         </Col>
 
@@ -65,6 +66,7 @@ class CampaignForm extends Component {
             placeholder="..."
             value={this.state.description}
             handleUserInput={this.handleUserInput}
+            maxLength={350}
           />
         </Col>
 
@@ -75,6 +77,7 @@ class CampaignForm extends Component {
             placeholder="..."
             value={this.state.prompt}
             handleUserInput={this.handleUserInput}
+            maxLength={350}
           />
         </Col>
 
@@ -85,6 +88,7 @@ class CampaignForm extends Component {
             placeholder="..."
             value={this.state.note}
             handleUserInput={this.handleUserInput}
+            maxLength={350}
           />
         </Col>
 
@@ -95,6 +99,7 @@ class CampaignForm extends Component {
             placeholder="..."
             value={this.state.color}
             handleUserInput={this.handleUserInput}
+            maxLength={350}
           />
         </Col>
 

@@ -31,7 +31,7 @@ const Input = props => (
       name={props.name}
       placeholder={props.placeholder}
       value={props.value}
-      maxLength={props.name === 'reason' ? '' : '35'}
+      maxLength={props.maxLength}
       onChange={props.handleUserInput}
     />
   </InputStyle>
