@@ -87,6 +87,7 @@ class Cards extends React.Component {
                     location={card.location}
                     id={card.id}
                     color={this.state.campaign.color}
+                    key={i}
                   />
                 ))}
               </CardList>
