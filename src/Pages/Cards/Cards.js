@@ -9,7 +9,6 @@ import '../../Utils/FirebaseConfig';
 import { Container } from '../../DesignSystem/Container';
 import { CardListPage } from '../../DesignSystem/CardListPage';
 import { CardList } from '../../DesignSystem/CardList';
-import { Link } from '../../DesignSystem/Link';
 
 import { Body } from '../../DesignSystem/Body';
 
@@ -66,19 +65,6 @@ class Cards extends React.Component {
   }
 
   render() {
-    const cardList = this.state.cards.map((card, i) => (
-      <Col xs={12} sm={6} md={4} key={i}>
-        <Link href={`/card/${card.id}`}>
-          <Card
-            text={card.reason}
-            name={card.name}
-            location={card.location}
-            id={card.id}
-            color={this.state.campaign.color}
-          />
-        </Link>
-      </Col>
-    ));
     const pageContent = this.state.campaign.id !== undefined ? (
       <CardListPage>
         <Body>
@@ -92,7 +78,18 @@ class Cards extends React.Component {
               />
             </Row>
             <Row>
-              <CardList>{cardList}</CardList>
+              <CardList>
+                {this.state.cards.map((card, i) => (
+                  <Card
+                    card={card}
+                    text={card.reason}
+                    name={card.name}
+                    location={card.location}
+                    id={card.id}
+                    color={this.state.campaign.color}
+                  />
+                ))}
+              </CardList>
             </Row>
           </Container>
         </Body>

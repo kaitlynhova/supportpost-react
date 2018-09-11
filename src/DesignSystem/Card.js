@@ -4,64 +4,79 @@ import styled from 'styled-components';
 
 import { theme } from './theme';
 
-const CardContainer = styled.div`
-  background-color: ${theme.colors.whitesmoke};
-  margin-bottom: ${theme.space.standard}px;
-  margin-top: -17vw;
-  padding-bottom: 100%;
-  position: relative;
-`;
-
-const CardContent = styled.div`
+const SupportCard = styled.a`
   align-items: center;
-  bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
+  background: ${theme.colors.white};
+  border: ${theme.space.standard / 2}px solid ${theme.colors.black};
+  box-sizing: border-box;
+  color: ${theme.colors.black};
   display: flex;
-  font-size: ${theme.fontSizes.card}vw;
-  left: 0;
-  padding: ${theme.space.standard}px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  /* Vertical Centering */
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  z-index: 1;
-  p {
-    font-size: ${theme.fontSizes.cardname}px;
-    padding-top: ${theme.space.standard / 3}px;
+  flex: 0 0 33.33333%;
+  flex-basis: auto;
+  width: 33.33333%;
+  @media only screen and (max-width: ${theme.breakpoints.medium}px) {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+  @media only screen and (max-width: ${theme.breakpoints.small}px) {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  &:before {
+    content: '';
+    float: left;
+    padding-top: 100%;
+  }
+  &:hover {
+    color: ${theme.colors.black};
+    text-decoration: none;
   }
 `;
 
 const Triangle = styled.div`
-  border-left: 0px solid transparent;
-  border-right: 17vw solid transparent;
-  border-top: 17vw solid ${props => props.color};
+  align-self: self-start;
+  border-left: 0px solid ${theme.colors.transparent};
+  border-right: ${theme.cardtriangle.desktop}vw solid ${theme.colors.transparent};
+  border-top: ${theme.cardtriangle.desktop}vw solid ${props => props.color};
   height: 0;
-  position: relative;
+  position: absolute;
   width: 0;
   z-index: 1;
+  @media only screen and (max-width: ${theme.breakpoints.medium}px) {
+    border-right: ${theme.cardtriangle.tablet}vw solid ${theme.colors.transparent};
+    border-top: ${theme.cardtriangle.tablet}vw solid ${props => props.color};
+  }
+  @media only screen and (max-width: ${theme.breakpoints.small}px) {
+    border-right: ${theme.cardtriangle.mobile}vw solid ${theme.colors.transparent};
+    border-top: ${theme.cardtriangle.mobile}vw solid ${props => props.color};
+  }
+`;
+
+const CardContent = styled.div`
+  padding: ${theme.space.standard}px;
+  position: relative;
+  text-align: left;
+  z-index: 2;
+`;
+
+const CardDescription = styled.div`
+  font-size: ${theme.fontSizes.card}px;
+`;
+
+const CardName = styled.div`
+  font-size: ${theme.fontSizes.cardname}px;
 `;
 
 const generateCardAuthor = (name, location) => (name ? `- ${name}, ${location}` : '');
 
 export const Card = props => (
-  <span>
+  <SupportCard href={`/card/${props.card.id}`}>
     <Triangle color={props.color} />
-    <CardContainer>
-      <CardContent>
-        <span>
-          {props.text}
-          {props.name && <p> {generateCardAuthor(props.name, props.location)}</p>}
-        </span>
-      </CardContent>
-    </CardContainer>
-  </span>
+    <CardContent>
+      <CardDescription>{props.text}</CardDescription>
+      <CardName>{props.name && <p> {generateCardAuthor(props.name, props.location)}</p>}</CardName>
+    </CardContent>
+  </SupportCard>
 );
 
 Card.defaultProps = {

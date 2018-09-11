@@ -7,6 +7,7 @@ export const breakpoints = {
 export const colors = {
   black: '#000000',
   pink: '#f3808354',
+  transparent: 'transparent',
   white: '#FFFFFF',
   whitesmoke: '#F5F5F5'
 };
@@ -25,7 +26,7 @@ export const fontSizes = {
   p: 22,
   h1: 45,
   h2: 35,
-  card: 2.9,
+  card: 40,
   cardname: 25,
   largecard: 75,
   subtext: 15
@@ -33,6 +34,12 @@ export const fontSizes = {
 
 export const letterspacing = {
   subtext: 3
+};
+
+export const cardtriangle = {
+  desktop: 17,
+  tablet: 30,
+  mobile: 60
 };
 
 export const lineheight = {
@@ -55,6 +62,7 @@ export const weights = {
 
 export const theme = {
   breakpoints,
+  cardtriangle,
   colors,
   container,
   fonts,
