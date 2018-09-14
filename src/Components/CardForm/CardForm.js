@@ -16,6 +16,7 @@ class CardForm extends Component {
       createdAt: '',
       email: '',
       reason: '',
+      approved: false,
       location: '',
       name: '',
       reasonCount: 0,
@@ -49,6 +50,7 @@ class CardForm extends Component {
   submitCard() {
     if (this.state.recaptcha) {
       this.props.addCard({
+        approved: this.state.approved,
         campaignId: this.props.campaignId,
         id: this.state.id,
         createdAt: Date.now(),
@@ -81,10 +83,10 @@ class CardForm extends Component {
           <Input
             name="reason"
             label="My Reason:"
-            placeholder="..."
+            placeholder="Because I believe..."
             value={this.state.reason}
             handleUserInput={this.handleReasonInput}
-            maxLength={35}
+            maxLength={90}
           />
           <CharacterCounter>
             {this.state.reasonCount}
@@ -95,7 +97,7 @@ class CardForm extends Component {
           <Input
             name="name"
             label="Name:"
-            placeholder="..."
+            placeholder="Hova Hovancen"
             value={this.state.name}
             handleUserInput={this.handleUserInput}
             maxLength={35}
@@ -105,7 +107,7 @@ class CardForm extends Component {
           <Input
             name="email"
             label="Email:"
-            placeholder="..."
+            placeholder="Email@email.com"
             value={this.state.email}
             handleUserInput={this.handleUserInput}
             maxLength={35}
@@ -114,11 +116,11 @@ class CardForm extends Component {
         <Col xs={12} md={4}>
           <Input
             name="location"
-            label="Location:"
-            placeholder="City, State"
+            label="State:"
+            placeholder="CA"
             value={this.state.location}
             handleUserInput={this.handleUserInput}
-            maxLength={35}
+            maxLength={2}
           />
         </Col>
         <Col xs={12} md={4}>

@@ -70,7 +70,7 @@ const CardName = styled.div`
 const generateCardAuthor = (name, location) => (name ? `- ${name}, ${location}` : '');
 
 export const Card = props => (
-  <SupportCard href={`/card/${props.card.id}`}>
+  <SupportCard href={props.card ? `/card/${props.card.id}` : ''}>
     <Triangle color={props.color} />
     <CardContent>
       <CardDescription>{props.text}</CardDescription>
