@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { theme } from './theme';
 
 const HeaderText = styled.h1`
-  color: ${theme.colors.white};
+  color: ${theme.colors.black};
   padding-bottom: ${theme.space.standard / 2}px;
 `;
 

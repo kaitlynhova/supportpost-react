@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import { theme } from './theme';
 import { Button } from './Button';
-import { Card } from './Card';
+import { CardExample } from './CardExample';
 
 const CampaignContainer = styled.div`
   font-family: ${theme.fonts.primary};
@@ -44,7 +44,7 @@ export const Campaign = props => (
         </Col>
         <Col xs={12} md={4}>
           <CardContainer>
-            <Card color={props.color} text={`${props.prompt}...`} />
+            <CardExample color={props.color} text={`${props.prompt}...`} />
           </CardContainer>
         </Col>
       </Row>

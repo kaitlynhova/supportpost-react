@@ -7,21 +7,12 @@ import { theme } from './theme';
 const SupportCard = styled.a`
   align-items: center;
   background: ${theme.colors.white};
-  border: ${theme.space.standard / 2}px solid ${theme.colors.whitesmoke};
   box-sizing: border-box;
   color: ${theme.colors.black};
   display: flex;
-  flex: 0 0 33.33333%;
+  flex: 0 0 100%;
   flex-basis: auto;
-  width: 33.33333%;
-  @media only screen and (max-width: ${theme.breakpoints.medium}px) {
-    flex: 0 0 50%;
-    width: 50%;
-  }
-  @media only screen and (max-width: ${theme.breakpoints.small}px) {
-    flex: 0 0 100%;
-    width: 100%;
-  }
+  width: 100%;
   &:before {
     content: '';
     float: left;
@@ -69,7 +60,7 @@ const CardName = styled.div`
 
 const generateCardAuthor = (name, location) => (name ? `- ${name}, ${location}` : '');
 
-export const Card = props => (
+export const CardExample = props => (
   <SupportCard href={props.card ? `/card/${props.card.id}` : ''}>
     <Triangle color={props.color} />
     <CardContent>
@@ -79,12 +70,12 @@ export const Card = props => (
   </SupportCard>
 );
 
-Card.defaultProps = {
+CardExample.defaultProps = {
   name: '',
   location: ''
 };
 
-Card.propTypes = {
+CardExample.propTypes = {
   color: PropTypes.string.isRequired,
   location: PropTypes.string,
   name: PropTypes.string,

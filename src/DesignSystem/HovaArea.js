@@ -7,7 +7,7 @@ import logo from '../Images/logo.svg';
 import hovaLabs from '../Images/thehovas.png';
 
 export const HovaBackground = styled.div`
-  background-color: ${theme.colors.whitesmoke};
+  background-color: ${theme.colors.white};
   padding: ${theme.space.standard * 2}px ${theme.space.standard}px 0 ${theme.space.standard}px;
 `;
 
