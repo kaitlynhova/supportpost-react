@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { theme } from './theme';
 
-const SupportCard = styled.a`
+const SupportCard = styled.div`
   align-items: center;
   background: ${theme.colors.white};
   box-sizing: border-box;
@@ -61,7 +61,7 @@ const CardName = styled.div`
 const generateCardAuthor = (name, location) => (name ? `- ${name}, ${location}` : '');
 
 export const CardExample = props => (
-  <SupportCard href={props.card ? `/card/${props.card.id}` : ''}>
+  <SupportCard>
     <Triangle color={props.color} />
     <CardContent>
       <CardDescription>{props.text}</CardDescription>

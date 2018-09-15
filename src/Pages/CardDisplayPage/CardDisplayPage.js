@@ -7,6 +7,7 @@ import { Container } from '../../DesignSystem/Container';
 import { LargeCard } from '../../DesignSystem/LargeCard';
 import { TriangleLarge } from '../../DesignSystem/TriangleLarge';
 import { theme } from '../../DesignSystem/theme';
+import { Representatives } from './Representatives';
 
 import '../../Utils/FirebaseConfig';
 
@@ -70,6 +71,7 @@ class CardDisplayPage extends Component {
               <i id="note">* {this.state.campaign.note}</i>
             </LargeCard>
           </Container>
+          <Representatives location={this.state.card.location} />
         </Body>
       </span>
     ) : (

@@ -29,7 +29,7 @@ export const fontSizes = {
   card: 40,
   cardname: 25,
   largecard: 75,
-  subtext: 15
+  subtext: 16
 };
 
 export const letterspacing = {
