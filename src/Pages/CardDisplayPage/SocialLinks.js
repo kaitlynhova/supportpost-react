@@ -5,7 +5,7 @@ class SocialLinks extends Component {
   socialLink(name, handle) {
     return this.props.congressperson[handle] ? (
       <a href={`https://www.${name}.com/${this.props.congressperson[handle]}`} target="noopener _blank">
-        <Button> {name} </Button>
+        <Button> + {name} </Button>
       </a>
     ) : (
       ''

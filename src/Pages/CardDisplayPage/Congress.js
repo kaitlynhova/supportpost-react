@@ -3,6 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import propublica from '../../Images/Propublica.svg';
 import { Container } from '../../DesignSystem/Container';
+import { CopyLink } from './CopyLink';
 import { House } from './House';
 import { Senate } from './Senate';
 
@@ -40,7 +41,8 @@ class Congress extends Component {
   render() {
     return (
       <Container>
-        <h1>Share your views with your {this.props.location} Representatives:</h1>
+        <h1>Copy the URL to your SupportCard & share it with your {this.props.location} Representatives:</h1>
+        <CopyLink />
         <FlexContainer>
           <Senate senators={this.state.senate} location={this.props.location} />
           <House representatives={this.state.house} location={this.props.location} />
