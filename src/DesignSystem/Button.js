@@ -8,5 +8,6 @@ export const Button = styled.button`
   font-family: ${theme.fonts.primary};
   font-size: ${theme.fontSizes.p}px;
   outline: none;
-  padding: ${theme.space.standard / 2}px ${theme.space.standard}px;
+  padding: ${theme.space.standard / 3}px ${theme.space.standard / 1.5}px;
+  margin: ${theme.space.standard / 2}px ${theme.space.standard / 2}px 0 0;
 `;

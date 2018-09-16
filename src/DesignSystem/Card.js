@@ -65,6 +65,7 @@ const CardDescription = styled.div`
 
 const CardName = styled.div`
   font-size: ${theme.fontSizes.cardname}px;
+  padding-top: ${theme.space.standard / 2}px;
 `;
 
 const generateCardAuthor = (name, location) => (name ? `- ${name}, ${location}` : '');

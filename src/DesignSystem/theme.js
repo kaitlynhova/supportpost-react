@@ -30,7 +30,8 @@ export const fontSizes = {
   card: 40,
   cardname: 25,
   largecard: 75,
-  subtext: 16
+  subtext: 16,
+  congressperson: 26
 };
 
 export const letterspacing = {
