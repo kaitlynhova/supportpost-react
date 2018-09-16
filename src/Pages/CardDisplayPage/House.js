@@ -5,8 +5,9 @@ import Flex50 from '../../DesignSystem/Flex50';
 
 class House extends Component {
   render() {
-    const representatives = this.props.representatives.map((representative, i) => (
-      <Representative location={this.props.location} representative={representative} key={i} />
+    const sortedRepresentatives = this.props.representatives.sort((a, b) => Number(a.district) - Number(b.district));
+    const representatives = sortedRepresentatives.map(representative => (
+      <Representative location={this.props.location} representative={representative} key={representative.id} />
     ));
     return (
       <Flex50>
@@ -22,4 +23,5 @@ class House extends Component {
     );
   }
 }
+
 export { House };

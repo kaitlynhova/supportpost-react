@@ -25,9 +25,13 @@ const Senator = props => (
 );
 
 SenatorStyle.propTypes = {
-  senator: {
-    name: PropTypes.string
-  }
+  location: PropTypes.string,
+  senator: PropTypes.shape({
+    name: PropTypes.string,
+    party: PropTypes.string,
+    district: PropTypes.string,
+    next_election: PropTypes.string
+  })
 };
 
 export default Senator;

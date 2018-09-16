@@ -59,4 +59,5 @@ class Congress extends Component {
 Congress.propTypes = {
   location: PropTypes.string.isRequired
 };
+
 export { Congress };

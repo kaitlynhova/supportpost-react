@@ -27,9 +27,13 @@ const Representative = props => (
 );
 
 RepresentativeStyle.propTypes = {
-  representative: {
-    name: PropTypes.string
-  }
+  location: PropTypes.string,
+  representative: PropTypes.shape({
+    name: PropTypes.string,
+    party: PropTypes.string,
+    district: PropTypes.string,
+    next_election: PropTypes.string
+  })
 };
 
 export default Representative;
