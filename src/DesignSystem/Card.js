@@ -61,6 +61,7 @@ const CardContent = styled.div`
 
 const CardDescription = styled.div`
   font-size: ${theme.fontSizes.card}px;
+  line-height: ${theme.fontSizes.card + 5}px;
 `;
 
 const CardName = styled.div`
