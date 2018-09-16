@@ -19,7 +19,7 @@ class SocialLinks extends Component {
         {this.socialLink('Twitter', 'twitter_id')}
         {this.socialLink('Youtube', 'youtube_id ')}
         <a
-          href={`https://www.google.com/search?q=%${this.props.congressperson.name.replace(/\s+/g, '%20')}`}
+          href={`https://www.google.com/search?q=${this.props.congressperson.name.replace(/\s+/g, '%20')}`}
           target="noopener _blank"
         >
           <Button>Google Them!</Button>
