@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { theme } from './theme';
 import SocialLinks from '../Pages/CardDisplayPage/SocialLinks';
 
-export const CongressPerson = styled.p`
+export const CongressPerson = styled.div`
   margin: ${theme.space.standard}px 0;
 `;
 

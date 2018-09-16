@@ -6,7 +6,7 @@ import SocialLinks from '../Pages/CardDisplayPage/SocialLinks';
 
 import { theme } from './theme';
 
-export const CongressPerson = styled.p`
+export const CongressPerson = styled.div`
   margin: ${theme.space.standard}px 0;
 `;
 
