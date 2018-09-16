@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { theme } from './theme';
-
 export const RepresentativeStyle = styled.div``;
 
 const Representative = props => (
@@ -12,6 +10,8 @@ const Representative = props => (
   </RepresentativeStyle>
 );
 
-RepresentativeStyle.propTypes = {};
+RepresentativeStyle.propTypes = {
+  name: PropTypes.string
+};
 
 export default Representative;

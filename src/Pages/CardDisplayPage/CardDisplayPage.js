@@ -33,7 +33,6 @@ class CardDisplayPage extends Component {
   handleCard(snap) {
     const card = snap.val();
     card.id = snap.key;
-    console.log(card.reason);
     this.setState({ card });
     this.getCampaign();
   }

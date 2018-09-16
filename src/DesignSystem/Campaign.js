@@ -52,8 +52,8 @@ export const Campaign = props => (
   </CampaignContainer>
 );
 
-Campaign.propTypes = PropTypes.shape({
+Campaign.propTypes = {
   description: PropTypes.string,
   id: PropTypes.string,
   title: PropTypes.string
-});
+};

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col } from 'react-bootstrap';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Input from '../../DesignSystem/Input';
+import StateSelect from '../../DesignSystem/StateSelect';
 
 import { Button } from '../../DesignSystem/Button';
 import { PageHeader } from '../../DesignSystem/PageHeader';
@@ -114,13 +115,11 @@ class CardForm extends Component {
           />
         </Col>
         <Col xs={12} md={4}>
-          <Input
+          <StateSelect
             name="location"
             label="State:"
-            placeholder="CA"
             value={this.state.location}
             handleUserInput={this.handleUserInput}
-            maxLength={2}
           />
         </Col>
         <Col xs={12} md={4}>

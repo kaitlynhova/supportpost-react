@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 import { Card } from '../../DesignSystem/Card';
 import CardForm from '../../Components/CardForm/CardForm';

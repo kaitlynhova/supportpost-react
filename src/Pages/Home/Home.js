@@ -28,13 +28,16 @@ class Home extends Component {
     this.setState({ campaigns: [...this.state.campaigns, newCampaign] });
   }
 
-  render(props) {
-    const campaignList = this.state.campaigns.map((campaign, i) => <Campaign {...campaign} key={i} />);
+  render() {
     return (
       <span>
         <Body>
           <Hero />
-          <Container>{campaignList}</Container>
+          <Container>
+            {this.state.campaigns.map((campaign, i) => (
+              <Campaign {...campaign} key={i} />
+            ))}
+          </Container>
         </Body>
         <HovaArea />
       </span>
