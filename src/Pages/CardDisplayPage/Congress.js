@@ -6,6 +6,8 @@ import { Container } from '../../DesignSystem/Container';
 import { House } from './House';
 import { Senate } from './Senate';
 
+import FlexContainer from '../../DesignSystem/FlexContainer';
+
 class Congress extends Component {
   constructor(props) {
     super(props);
@@ -39,12 +41,16 @@ class Congress extends Component {
     return (
       <Container>
         <h1>Share your views with your {this.props.location} Representatives:</h1>
-        <p>Representative info powered by:</p>
-        <a href="https://www.propublica.org/datastore/" target="noopener _blank">
-          <img alt="ProPublica" src={propublica} width="200px" />
-        </a>
-        <House representatives={this.state.house} />
-        <Senate senators={this.state.senate} />
+        <FlexContainer>
+          <Senate senators={this.state.senate} location={this.props.location} />
+          <House representatives={this.state.house} location={this.props.location} />
+        </FlexContainer>
+        <Container>
+          <p>Representative info powered by:</p>
+          <a href="https://projects.propublica.org/api-docs/congress-api/" target="noopener _blank">
+            <img alt="ProPublica" src={propublica} width="200px" />
+          </a>
+        </Container>
       </Container>
     );
   }

@@ -37,6 +37,12 @@ export const letterspacing = {
   subtext: 3
 };
 
+export const partyColors = {
+  D: '#4c69b2',
+  R: '#df3f3f',
+  I: '#000000'
+};
+
 export const cardtriangle = {
   desktop: 17,
   tablet: 30,
@@ -70,6 +76,7 @@ export const theme = {
   fontSizes,
   letterspacing,
   lineheight,
+  partyColors,
   space,
   weights
 };
