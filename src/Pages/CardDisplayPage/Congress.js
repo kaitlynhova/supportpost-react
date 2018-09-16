@@ -42,7 +42,7 @@ class Congress extends Component {
     return (
       <Container>
         <h1>Copy the URL to your SupportCard & share it with your {this.props.location} Representatives:</h1>
-        <CopyLink />
+        <CopyLink supportText={this.props.supportText} />
         <FlexContainer>
           <Senate senators={this.state.senate} location={this.props.location} />
           <House representatives={this.state.house} location={this.props.location} />
@@ -59,7 +59,8 @@ class Congress extends Component {
 }
 
 Congress.propTypes = {
-  location: PropTypes.string.isRequired
+  location: PropTypes.string.isRequired,
+  supportText: PropTypes.string.isRequired
 };
 
 export { Congress };

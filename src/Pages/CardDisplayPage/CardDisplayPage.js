@@ -70,7 +70,10 @@ class CardDisplayPage extends Component {
               <i id="note">* {this.state.campaign.note}</i>
             </LargeCard>
           </Container>
-          <Congress location={this.state.card.location} />
+          <Congress
+            supportText={`${this.state.campaign.prompt} ${this.state.card.reason}`}
+            location={this.state.card.location}
+          />
         </Body>
       </span>
     ) : (
